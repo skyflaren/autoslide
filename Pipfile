@@ -4,8 +4,28 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-python-dotenv = "*"
+certifi = "==2021.5.30"
+charset-normalizer = "==2.0.4"
+click = "==8.0.1"
+colorama = "==0.4.4"
+idna = "==3.2"
+jellyfish = "==0.8.8"
+joblib = "==1.0.1"
+lxml = "==4.6.3"
+networkx = "==2.6.2"
+nltk = "==3.6.2"
+numpy = "==1.21.2"
+python-pptx = "==0.6.19"
+regex = "==2021.8.3"
+requests = "==2.26.0"
+segtok = "==1.5.10"
+tabulate = "==0.8.9"
+textblob = "==0.15.3"
+tqdm = "==4.62.1"
+urllib3 = "==1.26.6"
+yake = "==0.4.8"
+Pillow = "==8.3.1"
+XlsxWriter = "==3.0.1"
 
 [dev-packages]
 
