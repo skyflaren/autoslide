@@ -1,13 +1,11 @@
 from pptx import Presentation
-from pprint import pprint
 from keyword_analyzer import KeywordAnalyzer, KeywordAnalyzer2
 from webscraper import ImageScraper
-import os
 
 if __name__ == "__main__":
     prs = Presentation("cheetah.pptx")
-    # kw_analyzer = KeywordAnalyzer(max_ngram_size=2, keyword_count=3)
-    kw_analyzer = KeywordAnalyzer2()
+    kw_analyzer = KeywordAnalyzer(max_ngram_size=2, keyword_count=3)
+    # kw_analyzer = KeywordAnalyzer2()
     scraper = ImageScraper(per_page=5, quality="thumb")
     queries = [[] for _ in prs.slides]
 
