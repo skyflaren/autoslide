@@ -1,7 +1,53 @@
 {% extends 'base.html' %}
 
+{% block head %}
+	<title>AutoSlide</title>
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% end block %}
+
 {% block body %}
-<div class="container">
-    <h1>autoslide</h1>
-</div>
+	<div class ="centered">
+			<div class="file-container">
+				<div id="uno">
+					<div  class="drag-area">
+						<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+						<header> Drag & Drop to Upload File</header>
+						<span> OR </span>
+						<button> Browse File</button>
+						<input type="file" hidden>
+					</div>
+				</div>
+
+				<div  id ="dora" >
+					<div class="drag-area">
+						<canvas id="myCanvas" width="300" height="200" style="border:0px solid #d3d3d3;"></canvas>
+					</div>
+				</div>
+
+				
+				<div class="range-slider">
+					<input type="range" min="0" max="100" value="50" step="50" list="tickmarks">
+					<datalist id="tickmarks">
+						<option value="0" label="Simple"></option>
+						<option value="50" label="Moderate"></option>
+						<option value="100" label="Complex"></option>
+					</datalist>
+				</div>
+
+				<div  id ="boots" >
+					<div class="submit-button" style="margin-top:10px;">
+						<button class="button">Submit</button>
+					</div>
+				</div>
+
+			
+				
+				<script src="{% static 'js/script.js' %}"></script>
+
+			</div>
+				
+			</div>
+   </div>
+
 {% endblock %}

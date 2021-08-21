@@ -6,23 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Water Tracker</title>
    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-   <!-- Materialize CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <!-- Bootstrap 4.5 CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
    <!-- Style CSS -->
    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
 
    {% block head %}
    {% endblock %}
    
 </head>
 <body>
-
-    <!-- jQuery -->
-    <script href="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Materialize CSS -->
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+	<!-- Bootstrap 4.5 JS -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Popper JS -->
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<!-- Font Awesome -->
+	<script src="{% static 'js/all.min.js' %}"></script>
 
     {% block body %}
     {% endblock %}
