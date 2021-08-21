@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
+
 :root{
   --light-grey: #f5fbfc;
   --light-green: #ebfae6;
@@ -6,6 +8,7 @@
   --aqua-grey: #a4afb3;
   --coral-red: #f55f6b;
   --dark-grey: #242423;
+  --cadet-blue: #29335c;
 }
 
 /*-- Body Reset --*/
