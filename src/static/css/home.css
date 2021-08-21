@@ -1,0 +1,63 @@
+.text{
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.blob, .blob-layer {
+	height: 800px;
+}
+
+.blob-layer{
+	background-position: bottom center;
+	background-size: auto 200vh;
+	background-repeat: repeat-x;
+	width: 100%;
+	position: absolute;
+}
+
+.blob-layer.parallax {
+	position: fixed;
+}
+
+.blob {
+	position: relative;
+}
+
+#parallax {
+	display: block;
+}
+
+#blob-1 {
+    background-image: url('../img/top_blob.png');
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+#blob-2 {
+    background-image: url('../img/left_blob.png');
+    background-size: 100% 100%;
+    z-index: 10;
+}
+
+#blob-3 {
+    background-image: url('../img/right_blob.png');
+    background-size: 100vw 100vh;
+    z-index: 10;
+}
+#blob-4 {
+    background-image: url('../img/transition_blob.png');
+    margin-top: 200vh;
+    background-size: 100% 100%;
+    z-index: 15;
+}
+#blob-5 {
+    background-image: url('../img/wipe_blob.png');
+    margin-top: 300vh;
+    background-size: 100% 100%;
+    z-index: 15;
+}
+
+
+
+

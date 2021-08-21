@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<title>AutoSlide</title>
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- JS -->
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <section class="blob" id="parallax">
+        <div class="blob-layer parallax" id="blob-1" data-speed="49"></div>
+        <div class="text">
+            <h2 id="title">AUTOSLIDE</h2>
+            <h3 id="description">an automatic image finder for powerpoints powered by ml</h3>
+        </div>
+        <div class="blob-layer parallax" id="blob-2" data-speed="69"></div>
+        <div class="blob-layer parallax" id="blob-3" data-speed="69"></div>
+        <div class="blob-layer cover" id="blob-4" data-speed="100"></div>
+        <div class="blob-layer cover" id="blob-5" data-speed="100"></div>
+    </section>
+
+    <div class="sec">
+        <h2>Text or smth</h2>
+        <p>ronald bonald shmonald honald</p>
+    </div>
+
+
+{% endblock %}

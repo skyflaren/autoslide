@@ -26,6 +26,8 @@ urllib3 = "==1.26.6"
 yake = "==0.4.8"
 Pillow = "==8.3.1"
 XlsxWriter = "==3.0.1"
+django = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
