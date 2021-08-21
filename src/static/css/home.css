@@ -1,7 +1,19 @@
-.text{
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
+body{
+    background-color:#241c1c;
+  }
+
+.text-container{
+    display:flex; 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    right:0; 
+    left:0; 
+}
+
+.text-wrapper{
+    margin: auto;
+    color: var(--light-grey)
 }
 
 .blob, .blob-layer {
@@ -24,6 +36,18 @@
 	position: relative;
 }
 
+.upload {
+    margin-top: 175vh;
+    background-color: #fafafa;
+}
+
+#title{
+    z-index: -200;
+}
+#description{
+    z-index: -200;
+}
+
 #parallax {
 	display: block;
 }
@@ -31,31 +55,39 @@
 #blob-1 {
     background-image: url('../img/top_blob.png');
     background-size: 100% 100%;
-    z-index: 1;
+    z-index: -300;
 }
 
 #blob-2 {
     background-image: url('../img/left_blob.png');
     background-size: 100% 100%;
-    z-index: 10;
+    z-index: -100;
 }
 
 #blob-3 {
     background-image: url('../img/right_blob.png');
     background-size: 100vw 100vh;
-    z-index: 10;
+    z-index: -100;
 }
 #blob-4 {
     background-image: url('../img/transition_blob.png');
     margin-top: 200vh;
     background-size: 100% 100%;
-    z-index: 15;
+    z-index: -90;
 }
 #blob-5 {
-    background-image: url('../img/wipe_blob.png');
+    background-color: #fafafa;
     margin-top: 300vh;
+    padding: 500px;
     background-size: 100% 100%;
-    z-index: 15;
+    z-index: -85;
+}
+#blob-6 {
+    background-color:#fafafa;
+    margin-top: 210vh;
+    padding: 500px;
+    background-size: 100% 100%;
+    z-index: -85;
 }
 
 
