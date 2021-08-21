@@ -108,4 +108,4 @@ class ImageScraper:
 if __name__ == "__main__":
     queries = ["cool-robot", "big-building", "supercapacitor", "ttc", "municipality", "health-insurance-plan", "majority"]
     scraper = ImageScraper(per_page=5, quality="regular")
-    scraper.scrape(queries)
+    print(scraper.scrape(queries))
