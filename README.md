@@ -1,6 +1,6 @@
 # autoslide
 
-Introducing AutoSlide! An ML-powered image generator for all your crunch time needs. One of the most time consuming tasks when making slides is simply choosing good visuals to accomodate the presentation. With AutoSlide this will never be an issue again! 
+Introducing AutoSlide! An ML-powered image generator for all your crunch time needs. One of the most time consuming tasks when making slides is simply choosing good visuals to accomodate the presentation. With AutoSlide this will never be an issue again!  AutoSlide automatically chooses images and adds them to your powerpoints based on the content of your uploaded slides. Try it out below!
 
 Download the repository and navigate to the folder that contains the program. Install the dependencies by running:
 ```
