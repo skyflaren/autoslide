@@ -10,22 +10,22 @@ Introducing AutoSlide: an ML-powered slideshow generator for all your crunch tim
 
 # Installation 
 
-To begin, make sure that you have installed pipenv.
+After cloning the repo, make sure that you have installed pipenv:
 ```
 >> pip install pipenv
 ```
 
-Make sure the directory is the project file then activate the virtual environment by typing,
+Make sure the directory is the project file then activate the virtual environment by typing:
 ```
 >> pipenv shell
 ```
 
-All the dependencies can be installed by running,
+All the dependencies can be installed by running:
 ```
 >> pipenv sync
 ```
 
-After installing the dependencies, navigate to the src folder and run the server by typing
+After installing the dependencies, navigate to the src folder and run the server by typing:
 ```
 >> cd src
 >> python manage.py runserver
