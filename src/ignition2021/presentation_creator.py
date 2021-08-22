@@ -8,9 +8,9 @@ from .presentation_reader import PresentationReader
 class PresentationCreator:
     def __init__(self, presentation, image_dir):
         self.filename = presentation
-        self.image_dir = f"ppts\{image_dir}"
-        self.prs = Presentation(f"ppts\{presentation}")
-        self.prs_r = PresentationReader(f"ppts\{presentation}", complexity=1, debug=True)
+        self.image_dir = f"ppts/{image_dir}"
+        self.prs = Presentation(f"ppts/{presentation}")
+        self.prs_r = PresentationReader(f"ppts/{presentation}", complexity=1, debug=True)
         self.margin = 10
 
 
@@ -92,9 +92,9 @@ class PresentationCreator:
             top = down-height+1+self.margin
 
             imageName = ""
-            for filename in os.listdir(f'{self.image_dir}\Slide {slide+1}'):
+            for filename in os.listdir(f'{self.image_dir}/Slide {slide+1}'):
                 if filename.startswith("0"):
-                    imageName = f'{self.image_dir}\Slide {slide+1}\{filename}'
+                    imageName = f'{self.image_dir}/Slide {slide+1}/{filename}'
                 print(filename)
             if not imageName:
                 continue

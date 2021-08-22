@@ -47,6 +47,8 @@ dropArea.addEventListener("drop", (event)=>{
     document.getElementById("upload").style.display = "none";
     document.getElementById("uploaded").style.display = "block";
     document.getElementById("upload-button").style.display = "block";
+
+    uploadFile();
 });
 
 // function showFile(){

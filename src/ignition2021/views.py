@@ -48,7 +48,6 @@ class FileView(APIView):
         print(os.getcwd())
         zip_file = open(zip_name, 'rb+')
         print(zip_file)
-        img_file = open("upload-ui.png", 'rb')
         response = HttpResponse(FileWrapper(zip_file), content_type='application/zip', status=status.HTTP_200_OK)
         response['Content-Disposition'] = 'attachment; filename=%s'%zip_name
         # response['Content-Length'] = temp.tell()
