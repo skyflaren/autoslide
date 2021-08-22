@@ -101,6 +101,10 @@ body{
   border: 2px solid var(--box-grey);
 }
 
+.used{
+  border: 2px solid var(--wine-red);
+}
+
 .drag-area .icon{
   font-size: 85px;
   color: var(--wine-red);
