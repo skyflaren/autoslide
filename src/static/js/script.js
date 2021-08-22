@@ -19,14 +19,12 @@ input.addEventListener("change", function(){
 //if user drag file over box
 dropArea.addEventListener("dragover", ()=>{
     event.preventDefault();
-    console.log("File is over DragArea");
     dropArea.classList.add("active");
     dragText.textContent = "Release to Upload File";
 })
 
 //if user leave drag file from box
 dropArea.addEventListener("dragleave", ()=>{
-    console.log("File is outside DragArea");
     dropArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
 })
@@ -53,10 +51,9 @@ function showFile(){
             ctx.beginPath();
             ctx.rect(50, 20, 200, 150);
             ctx.fill();
-            document.getElementById("uno").style.display = "none";
-            document.getElementById("dora").style.display = "block";
+            document.getElementById("upload").style.display = "none";
+            document.getElementById("uploaded").style.display = "block";
             document.getElementById("boots").style.display = "block";
-            console.log("wtf man");
         }
         fileReader.readAsDataURL(file);
     }

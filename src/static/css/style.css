@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
 
 :root{
@@ -7,21 +8,26 @@
   --bright-green: #58da6e;
   --aqua-grey: #a4afb3;
   --coral-red: #f55f6b;
+
   --dark-grey: #242423;
   --cadet-blue: #29335c;
+  --wine-red: #a64d79;
+  --light-grey: #fafafa;
+  --mid-grey: #999999;
+  --dark-grey: #242423;
 }
 
 /*-- Body Reset --*/
 body{
-  background-color:#7bd361;
+  background-color: var(--light-grey);
+  font-family: 'Poppins', sans-serif;
 }
 
-
-#uno{
+#upload{
   display: block;
 }
 
-#dora{
+#uploaded{
   display: none;
 }
 
@@ -29,13 +35,9 @@ body{
   display:none;
 }
 
-
 .centered{
-  display:flex; 
-  position:absolute; 
-  top:0; bottom:0; 
-  right:0; 
-  left:0; 
+  position: relative;
+  display: flex;
 }
 
 .file-container{
@@ -43,7 +45,7 @@ body{
 }
 
 .drag-area{
-  border: 2px dashed #fff;
+  border: 1.5px dashed var(--mid-grey);
   height: 300px;
   width: 400px;
   border-radius: 5px;
@@ -63,9 +65,10 @@ body{
 
 .button{
   background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-  
+  color: var(--wine-red);
+  padding: 5px;
+  border: 2px solid var(--wine-red);
+  border-radius: 0.25rem
 }
 
 .button:hover{
@@ -73,40 +76,42 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #4CAF50;
+  background-color: var(--wine-red);
+  transition: background-color, color linear 0.15s;
   color: white;
 }
 
 .drag-area.active{
-  border: 2px solid #fff;
+  border: 1px solid var(--mid-grey);
 }
 
 .drag-area .icon{
   font-size: 85px;
-  color: #ebfae6;
+  color: var(--wine-red);
 }
 
 .drag-area header{
   font-size: 23px;
-  font-weight: 500;
-  color: #ebfae6;
+  font-weight: 300;
+  color: var(--wine-red);
+  text-align: center;
 }
 
 .drag-area span{
   font-size: 17px;
-  font-weight: 500;
-  color: #ebfae6;
-  margin: 5px 0 5px 0;
+  font-weight: 300;
+  color: var(--wine-red);
+  margin: 5px 0 13px 0;
 }
 
 .drag-area button{
   padding: 5px 15px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 300;
   border: none;
   outline: none;
-  background: #ebfae6;
-  color: var(--mid-green);
+  background: var(--wine-red);
+  color: var(--light-grey);
   border-radius: 5px;
   cursor: pointer;
 }
@@ -121,7 +126,7 @@ body{
 datalist {
   display: flex;
   justify-content: space-between;
-  color: #ebfae6;
+  color: var(--mid-grey);
   width: 100%;
   font-size: 15px;
 }
@@ -130,8 +135,9 @@ input {
   width: 100%;
 }
 
-
-
+b{
+  font-weight: 600;
+}
 
 /* Devices under 1199px (xl) */
 @media (max-width: 1199.98px) {
@@ -196,3 +202,10 @@ Extra (xl) large devices (large desktops, 1200px and up)
   transform: translateZ(0);
   will-change: transform;
 }
+
+
+
+
+
+
+
