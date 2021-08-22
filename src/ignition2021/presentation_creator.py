@@ -2,21 +2,21 @@ from pptx import *
 from pptx.util import *
 from pptx.enum.text import MSO_AUTO_SIZE
 import os
-from presentation_reader import PresentationReader
+from .presentation_reader import PresentationReader
 
 
 class PresentationCreator:
     def __init__(self, presentation, image_dir):
         self.filename = presentation
-        self.image_dir = f"..\..\ppts\{image_dir}"
-        self.prs = Presentation(f"..\..\ppts\{presentation}")
-        self.prs_r = PresentationReader(f"..\..\ppts\{presentation}", complexity=1, debug=True)
+        self.image_dir = f"ppts\{image_dir}"
+        self.prs = Presentation(f"ppts\{presentation}")
+        self.prs_r = PresentationReader(f"ppts\{presentation}", complexity=1, debug=True)
         self.margin = 10
 
 
     def ReadPresentation(self):
         self.prs_r.set_download_dir(self.image_dir)
-        self.prs_r.set_image_quality("thumb")
+        self.prs_r.set_image_quality("regular")
         self.prs_r.find_images()
         
 
@@ -107,7 +107,7 @@ class PresentationCreator:
             else:
                 picture = shapes.add_picture(imageName, Mm(left), Mm(top), Mm(width-self.margin-self.margin), Mm(height-self.margin-self.margin))
 
-        self.prs.save(f'../../ppts/new-{self.filename}')
+        self.prs.save(f'{self.image_dir}/new-{self.filename}')
 
 
 if __name__ == "__main__":

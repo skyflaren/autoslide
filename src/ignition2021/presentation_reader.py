@@ -1,7 +1,7 @@
 from pptx import Presentation
 from pprint import pprint
-from keyword_analyzer import KeywordAnalyzer, KeywordAnalyzer2, KeywordAnalyzer3
-from webscraper import ImageScraper
+from .keyword_analyzer import KeywordAnalyzer, KeywordAnalyzer2, KeywordAnalyzer3
+from .webscraper import ImageScraper
 import time
 import asyncio
 

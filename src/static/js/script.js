@@ -97,12 +97,9 @@ async function uploadFile() {
     let formData = new FormData();
     formData.append("file", file);
 
-    const ctrl = new AbortController();
-    setTimeout(() => ctrl.abort(), 5000);
-
     try {
         let r = await fetch('/upload/', 
-          {method: "POST", body: formData, signal: ctrl.signal}); 
+          {method: "POST", body: formData}); 
         console.log('HTTP response code:',r.status); 
      } catch(e) {
         console.log('Error while uploading data: ', e);
