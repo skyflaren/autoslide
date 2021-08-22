@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
@@ -34,7 +34,7 @@ class FileView(APIView):
         # Zip Folder
         zip_name = f"{foldername}.zip"
 
-        file_paths = get_all_paths(foldername)
+        file_paths = get_all_paths(f'./ppts/{foldername}')
 
         print('Following files will be zipped:')
         for file_name in file_paths:
@@ -44,7 +44,10 @@ class FileView(APIView):
             for file in file_paths:
                 zip.write(file)
 
-        response = HttpResponse(open(zip_name, 'rb').read(), content_type='application/zip', status=status.HTTP_200_OK)
+        response = FileResponse(open(zip_name, 'rb'), status=status.HTTP_200_OK)
+        # response = FileResponse(zip_file, content_type='application/zip')
         response['Content-Disposition'] = f'attachment; filename={zip_name}'
-        
+        # response['Content-Length'] = temp.tell()
+        # temp.seek(0)
+
         return response
