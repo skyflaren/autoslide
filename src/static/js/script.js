@@ -37,7 +37,16 @@ dropArea.addEventListener("drop", (event)=>{
     event.preventDefault(); //preventing from default behaviour of opening file in new tab
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
     file = event.dataTransfer.files[0];
-    uploadFile();
+    
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(50, 20, 200, 150);
+    ctx.fill();
+    document.getElementById("upload").style.display = "none";
+    document.getElementById("uploaded").style.display = "block";
+    document.getElementById("upload-button").style.display = "block";
 });
 
 // function showFile(){
@@ -98,9 +107,18 @@ async function uploadFile() {
     formData.append("file", file);
 
     try {
-        let r = await fetch('/upload/', 
-          {method: "POST", body: formData}); 
-        console.log('HTTP response code:',r.status); 
+        fetch('/upload/', 
+          {method: "POST", body: formData})
+          .then(response => {
+                console.log(response);
+                response.blob()
+                .then(blobResponse => {
+                    console.log(blobResponse);
+                    var url  = window.URL.createObjectURL(blobResponse);
+                    window.location.assign(url);
+                })
+          });
+        // console.log('HTTP response code:',r.status);
      } catch(e) {
         console.log('Error while uploading data: ', e);
      }

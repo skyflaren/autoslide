@@ -9,6 +9,7 @@ from .presentation_creator import PresentationCreator
 from zipfile import ZipFile
 from .util import *
 from wsgiref.util import FileWrapper
+import os
 
 # Create your views here.
 def index(request):
@@ -44,10 +45,13 @@ class FileView(APIView):
             for file in file_paths:
                 zip.write(file)
 
-        response = FileResponse(open(zip_name, 'rb'), status=status.HTTP_200_OK)
-        # response = FileResponse(zip_file, content_type='application/zip')
-        response['Content-Disposition'] = f'attachment; filename={zip_name}'
+        print(os.getcwd())
+        zip_file = open(zip_name, 'rb+')
+        print(zip_file)
+        img_file = open("upload-ui.png", 'rb')
+        response = HttpResponse(FileWrapper(zip_file), content_type='application/zip', status=status.HTTP_200_OK)
+        response['Content-Disposition'] = 'attachment; filename=%s'%zip_name
         # response['Content-Length'] = temp.tell()
         # temp.seek(0)
-
+        print(response)
         return response
