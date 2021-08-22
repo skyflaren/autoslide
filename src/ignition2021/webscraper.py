@@ -6,7 +6,7 @@ import httpx
 
 class ImageScraper:
     # Image Quality: small, regular, full, raw, thumb
-    def __init__(self, per_page=10, quality="thumb", download_dir="Slide Images"):
+    def __init__(self, per_page=10, quality="regular", download_dir="Slide Images"):
         self.queries = ["dog"]
         self.query = ""
         self.per_page = per_page
@@ -90,8 +90,8 @@ class ImageScraper:
 
             ind = 0
             for name, url in scraped:
-                # print(url)
-                filepath = f"{os.path.join(os.path.realpath(os.getcwd()), slide_dir, ind)}.jpg"
+                filename=f"{ind}-{items[ind]}"
+                filepath = f"{os.path.join(os.path.realpath(os.getcwd()), slide_dir, filename)}.jpg"
                 ind += 1
                 r = requests.get(url, stream=True)
                 # print(r.status_code)
