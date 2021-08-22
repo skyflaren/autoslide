@@ -38,7 +38,7 @@ body{
 
 .upload {
     margin-top: 175vh;
-    background-color: #fafafa;
+    background-color: var(--light-grey);
 }
 
 #title{
@@ -81,14 +81,14 @@ body{
     z-index: -90;
 }
 #blob-5 {
-    background-color: #fafafa;
+    background-color: var(--light-grey);
     margin-top: 300vh;
     padding: 500px;
     background-size: 100% 100%;
     z-index: -85;
 }
 #blob-6 {
-    background-color:#fafafa;
+    background-color: var(--light-grey);
     margin-top: 210vh;
     padding: 500px;
     background-size: 100% 100%;

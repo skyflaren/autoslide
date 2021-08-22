@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -10,10 +11,13 @@
   --coral-red: #f55f6b;
 
   --wine-red: #a64d79;
-  --light-grey: #fafafa;
   --mid-grey: #999999;
   --dark-grey: #242423;
   --cadet-blue: #29335c;
+  --wine-red: #a64d79;
+  --light-grey: #fafafa;
+  --mid-grey: #999999;
+  --dark-grey: #242423;
 }
 
 /*-- Body Reset --*/
@@ -35,11 +39,8 @@ body{
 }
 
 .centered{
-  display:flex; 
-  position:absolute; 
-  top:0; bottom:0; 
-  right:0; 
-  left:0; 
+  position: relative;
+  display: flex;
 }
 
 .file-container{
