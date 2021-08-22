@@ -20,12 +20,12 @@ Make sure the directory is the project file then activate the virtual environmen
 >> pipenv shell
 ```
 
-All the dependancies can be installed by running,
+All the dependencies can be installed by running,
 ```
 >> pipenv sync
 ```
 
-After installing the dependancies, navigate to the src folder and run the server by typing
+After installing the dependencies, navigate to the src folder and run the server by typing
 ```
 >> cd src
 >> python manage.py runserver
