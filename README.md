@@ -1,6 +1,6 @@
 # autoslide (figma proof #3)
 
-[Figma Design Link](https://www.figma.com/file/OOPC6cp2QRsSnUe0ay4Z7y/AutoSlide?node-id=0%3A1)
+[**Figma Design Link**](https://www.figma.com/file/OOPC6cp2QRsSnUe0ay4Z7y/AutoSlide?node-id=0%3A1)
 
 ---
 
@@ -13,6 +13,8 @@ For the web dev proof, the frontend has been polished to improve the user experi
 ![Frontpage of Autoslide](https://media.giphy.com/media/IqFYGPEEhy5xP80sQ9/giphy.gif)
 
 <img src="https://github.com/skyflaren/autoslide/blob/proof-two/upload-ui.png?raw=true" width="640" height="360"/>
+
+---
 
 To test it yourself, you can run deploy the django server locally! Download the repository and navigate to the folder that contains the program. Install the dependencies by running:
 ```
