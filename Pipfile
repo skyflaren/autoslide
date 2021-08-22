@@ -29,6 +29,7 @@ XlsxWriter = "==3.0.1"
 django = "*"
 python-dotenv = "*"
 httpx = "*"
+djangorestframework = "*"
 
 [dev-packages]
 

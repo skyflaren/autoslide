@@ -46,11 +46,11 @@ class PresentationCreator:
                     w = i
                     if stack:
                         w = i - stack[-1] - 1
-                        if w * h > mx:
-                            mx = max(mx, w * h)
-                            lft = stack[-1]
-                            rit = i
-                            bot = k
+                    if w * h > mx:
+                        mx = max(mx, w * h)
+                        lft = stack[-1] if stack else 0
+                        rit = i
+                        bot = k
             if mx > ans:
                 ans = mx
                 a, b, c = lft, rit, bot
@@ -62,14 +62,14 @@ class PresentationCreator:
         l -= imgW//2
         t += h//2
         t -= imgH//2
-        return int(l), int(t)
+        return l, t
 
 
     def Process(self):
         totWidth = int(self.prs.slide_width.mm)+1
         totHeight = int(self.prs.slide_height.mm)+1
 
-        for slide in range(len(self.prs.slides)):
+        for slide in range(1, len(self.prs.slides)):
             shapes = self.prs.slides[slide].shapes
 
             boxes = []
@@ -86,26 +86,36 @@ class PresentationCreator:
                         grid[i][j] = 0
 
             area, left, right, down = self.maximalRectangle(grid)
-            width = right-left
+            width = right-left-self.margin-self.margin
             left += self.margin+1
-            height = area//width
-            top = down-height+1+self.margin
+            height = (area//width)-self.margin-self.margin
+            top = down-height+1
 
             imageName = ""
             for filename in os.listdir(f'{self.image_dir}/Slide {slide+1}'):
                 if filename.startswith("0"):
-                    imageName = f'{self.image_dir}/Slide {slide+1}/{filename}'
-                print(filename)
+                    imageName = f'{self.image_dir}\Slide {slide+1}\{filename}'
             if not imageName:
                 continue
 
             if height * 4 < width:
-                picture = shapes.add_picture(imageName, 0, 0)
+                picture = shapes.add_picture(imageName, 0, 0, width=Mm(totWidth))
+                ratio = totHeight/picture.height.mm
+                if ratio < 1:
+                    picture.width = int(picture.width*ratio)
+                    picture.height = int(picture.height*ratio)
                 newL, newT = self.center(0, 0, totWidth, totHeight, picture.width.mm, picture.height.mm)
-                picture.left = Mm(newL)
-                picture.top = Mm(newT)
+                picture.left = int(Mm(newL))
+                picture.top = int(Mm(newT))
             else:
-                picture = shapes.add_picture(imageName, Mm(left), Mm(top), Mm(width-self.margin-self.margin), Mm(height-self.margin-self.margin))
+                picture = shapes.add_picture(imageName, Mm(left), Mm(top), width=Mm(width))
+                ratio = height/picture.height.mm
+                if ratio < 1:
+                    picture.width = int(picture.width*ratio)
+                    picture.height = int(picture.height*ratio)
+                a, b = self.center(left, top, width, height, picture.width.mm, picture.height.mm)
+                picture.left = int(Mm(a))
+                picture.top = int(Mm(b))
 
         self.prs.save(f'{self.image_dir}/new-{self.filename}')
 
