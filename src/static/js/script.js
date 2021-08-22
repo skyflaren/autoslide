@@ -53,8 +53,8 @@ function showFile(){
             ctx.beginPath();
             ctx.rect(50, 20, 200, 150);
             ctx.fill();
-            document.getElementById("uno").style.display = "none";
-            document.getElementById("dora").style.display = "block";
+            document.getElementById("upload").style.display = "none";
+            document.getElementById("uploaded").style.display = "block";
             document.getElementById("boots").style.display = "block";
             console.log("wtf man");
         }
