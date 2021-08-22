@@ -6,7 +6,7 @@ import time
 import asyncio
 
 class PresentationReader:
-    def __init__(self, presentation, download_dir="Slide Images", image_quality="thumb", complexity=2, debug=False):
+    def __init__(self, presentation, download_dir="Slide Images", image_quality="regular", complexity=2, debug=False):
         self.filename = presentation
         self.prs = Presentation(presentation)
         self.quality = image_quality
@@ -66,8 +66,8 @@ class PresentationReader:
             
 
 if __name__ == "__main__":
-    prs_r = PresentationReader("cheetah.pptx", complexity=1, debug=True)
-    prs_r.set_download_dir("Cheetah Slides")
+    prs_r = PresentationReader("..\..\ppts\cheetah.pptx", complexity=1, debug=True)
+    prs_r.set_download_dir("..\..\ppts\Cheetah Slides")
     prs_r.set_image_quality("thumb")
     prs_r.find_images()
 

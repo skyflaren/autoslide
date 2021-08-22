@@ -1,8 +1,8 @@
 import yake
 import nltk
 from textblob import TextBlob
-from gensim.summarization import keywords
 nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
 
 class KeywordAnalyzer:
     def __init__(self, language="en", max_ngram_size=3, deduplication_threshold=0.3, keyword_count=5):
