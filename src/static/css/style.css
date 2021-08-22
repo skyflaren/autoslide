@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700;&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 :root{
   --light-grey: #f5fbfc;
@@ -19,8 +20,9 @@
 
 /*-- Body Reset --*/
 body{
-  background-color: var(--light-grey);
+  background-color: var(--cadet-blue);
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 #upload{
@@ -31,7 +33,7 @@ body{
   display: none;
 }
 
-#boots{
+#upload-button{
   display:none;
 }
 
@@ -123,6 +125,10 @@ body{
   border-radius: 5px;
 }
 
+.range-slider{
+  margin-top: 20px;
+}
+
 datalist {
   display: flex;
   justify-content: space-between;
@@ -205,7 +211,99 @@ Extra (xl) large devices (large desktops, 1200px and up)
 
 
 
+/* Blob Parallax Design */
 
+.text-container{
+    display:flex; 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    right:40%; 
+    left:0; 
+}
 
+.text-wrapper{
+    margin: auto;
+    color: var(--light-grey)
+}
 
+.blob, .blob-layer {
+  height: 100vh;
+}
 
+.blob-layer{
+  background-position: bottom center;
+  background-size: auto 200vh;
+  background-repeat: repeat-x;
+  width: 100%;
+  position: absolute;
+}
+
+.blob-layer.parallax {
+  position: fixed;
+}
+
+.blob {
+  position: relative;
+}
+
+.upload {
+  margin-top: 175vh;
+  background-color: var(--light-grey);
+}
+
+#title{
+  z-index: -200;
+  font-family: 'Kanit', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 4pt;
+  margin-bottom: 0px;
+}
+#description{
+  z-index: -200;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+#parallax {
+  display: block;
+}
+
+#blob-1 {
+  background-image: url('../img/top_blob.png');
+  background-size: 100% 100%;
+  z-index: -300;
+}
+
+#blob-2 {
+  background-image: url('../img/left_blob.png');
+  background-size: 100% 100%;
+  z-index: -100;
+}
+
+#blob-3 {
+  background-image: url('../img/right_blob.png');
+  background-size: 100vw 100vh;
+  z-index: -100;
+}
+#blob-4 {
+  background-image: url('../img/transition_blob.png');
+  margin-top: 200vh;
+  background-size: 100% 100%;
+  z-index: -90;
+}
+#blob-5 {
+  background-color: var(--light-grey);
+  margin-top: 300vh;
+  padding: 500px;
+  background-size: 100% 100%;
+  z-index: -85;
+}
+#blob-6 {
+  background-color: var(--light-grey);
+  margin-top: 210vh;
+  padding: 500px;
+  background-size: 100% 100%;
+  z-index: -85;
+}

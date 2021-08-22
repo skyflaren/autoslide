@@ -53,7 +53,7 @@ function showFile(){
             ctx.fill();
             document.getElementById("upload").style.display = "none";
             document.getElementById("uploaded").style.display = "block";
-            document.getElementById("boots").style.display = "block";
+            document.getElementById("upload-button").style.display = "block";
         }
         fileReader.readAsDataURL(file);
     }
