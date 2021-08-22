@@ -57,7 +57,13 @@ body{
 }
 
 .file-container{
-  margin:auto;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -200px;
 }
 
 .drag-area{
@@ -223,6 +229,19 @@ Extra (xl) large devices (large desktops, 1200px and up)
   will-change: transform;
 }
 
+#footer{
+  width: 100%;
+  padding: 50px;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--wine-red);
+  color: var(--light-grey);
+  text-align: center;
+  font-family: 'Lato', sans-serif; font-weight: 300;
+}
 
 
 /* Blob Parallax Design */
