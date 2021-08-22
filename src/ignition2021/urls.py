@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.index,name="index"),
     path('home/', views.home, name="home"),
     path('upload/', views.FileView.as_view()),
+    path('delete/', views.delete_view),
 ]

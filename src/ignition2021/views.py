@@ -10,6 +10,7 @@ from zipfile import ZipFile
 from .util import *
 from wsgiref.util import FileWrapper
 import os
+import time
 
 # Create your views here.
 def index(request):
@@ -50,7 +51,16 @@ class FileView(APIView):
         print(zip_file)
         response = HttpResponse(FileWrapper(zip_file), content_type='application/zip', status=status.HTTP_200_OK)
         response['Content-Disposition'] = 'attachment; filename=%s'%zip_name
-        # response['Content-Length'] = temp.tell()
-        # temp.seek(0)
-        print(response)
+        
         return response
+
+def delete_view(request):
+    if request.method == "GET":
+        print("Clearing")
+        now = time.time()
+        print(os.getcwd())
+        path = os.path.join(os.getcwd(), "/ppts")
+        files = [os.path.join(folder, filename) for filename in os.listdir(path)]
+        for filename in files:
+            if (now - os.stat(filename).st_mtime) > 180:
+                os.remove(os.path.join(path, filename))

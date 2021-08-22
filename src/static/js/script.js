@@ -109,9 +109,8 @@ async function uploadFile() {
     formData.append("file", file);
 
     try {
-        fetch('/upload/', 
-          {method: "POST", body: formData})
-          .then(response => {
+        await fetch('/upload/', {method: "POST", body: formData})
+        .then(response => {
                 console.log(response);
                 response.blob()
                 .then(blobResponse => {
@@ -120,6 +119,8 @@ async function uploadFile() {
                     window.location.assign(url);
                 })
           });
+          console.log("Done");
+          fetch('/delete/', {method: "GET", body: null});
         // console.log('HTTP response code:',r.status);
      } catch(e) {
         console.log('Error while uploading data: ', e);
