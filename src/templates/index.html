@@ -4,7 +4,7 @@
 {% block head %}
 	<title>AutoSlide</title>
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
 {% endblock %}
 
 {% block body %}
@@ -12,10 +12,10 @@
 			<div class="file-container">
 				<div id="uno">
 					<div  class="drag-area">
-						<div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-						<header> Drag & Drop to Upload File</header>
-						<span> OR </span>
-						<button> Browse File</button>
+						<!-- <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div> -->
+						<header><b>drag & drop a<br>powerpoint</b> (.pptx)</header>
+						<span> or </span>
+						<button>browse file</button>
 						<input type="file" hidden>
 					</div>
 				</div>
@@ -36,7 +36,7 @@
 					</datalist>
 				</div>
 
-				<div  id ="boots" >
+				<div id ="boots" >
 					<div class="submit-button" style="margin-top:10px;">
 						<button class="button">Submit</button>
 					</div>

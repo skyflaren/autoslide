@@ -17,7 +17,7 @@ body{
 }
 
 .blob, .blob-layer {
-	height: 800px;
+	height: 100vh;
 }
 
 .blob-layer{
