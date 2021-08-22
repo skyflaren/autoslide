@@ -91,7 +91,7 @@ class ImageScraper:
             ind = 0
             for name, url in scraped:
                 # print(url)
-                filepath = f"{os.path.join(os.path.realpath(os.getcwd()), slide_dir, items[ind])}.jpg"
+                filepath = f"{os.path.join(os.path.realpath(os.getcwd()), slide_dir, ind)}.jpg"
                 ind += 1
                 r = requests.get(url, stream=True)
                 # print(r.status_code)
