@@ -3,6 +3,7 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from .presentation_creator import PresentationCreator
@@ -11,6 +12,7 @@ from .util import *
 from wsgiref.util import FileWrapper
 import os
 import time
+import shutil
 
 # Create your views here.
 def index(request):
@@ -54,13 +56,21 @@ class FileView(APIView):
         
         return response
 
+@api_view(('GET',))
 def delete_view(request):
     if request.method == "GET":
         print("Clearing")
         now = time.time()
-        print(os.getcwd())
-        path = os.path.join(os.getcwd(), "/ppts")
-        files = [os.path.join(folder, filename) for filename in os.listdir(path)]
-        for filename in files:
-            if (now - os.stat(filename).st_mtime) > 180:
-                os.remove(os.path.join(path, filename))
+        folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "ppts")
+
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+        return Response({}, status=status.HTTP_200_OK)
