@@ -1,6 +1,6 @@
 # autoslide (figma proof #3)
 
-![Figma Design Link](https://www.figma.com/file/OOPC6cp2QRsSnUe0ay4Z7y/AutoSlide?node-id=0%3A1)
+[Figma Design Link](https://www.figma.com/file/OOPC6cp2QRsSnUe0ay4Z7y/AutoSlide?node-id=0%3A1)
 
 Introducing AutoSlide! An ML-powered image generator for all your crunch time needs. Visuals are often a key component of keeping the users attention and providing interest in a topic. However, one of the most time consuming tasks when making slides is simply going through all the keywords on a slide and choosing good visuals to accomodate the presentation. With AutoSlide this will never be an issue again!  AutoSlide automatically chooses images and adds them to your powerpoints based on the content of your uploaded slides. Try it out below!
 
