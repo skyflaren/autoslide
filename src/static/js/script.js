@@ -6,8 +6,17 @@ input = dropArea.querySelector("input");
 
 let file; 
 
-button.onclick = ()=>{
-    input.click();
+function another(){
+    // input.click();
+    document.getElementById("upload").style.display = "block";
+    document.getElementById("uploaded").style.display = "none";
+    document.getElementById("processing").style.display = "none";
+    document.getElementById("complete").style.display = "none";
+    document.getElementById("another").style.display = "none";
+    for(let xx of document.getElementsByClassName("drag-area")){
+        xx.style.border = "2px dashed var(--box-grey)";
+    }
+    dropArea.classList.remove("active");
 }
 
 input.addEventListener("change", function(){
@@ -46,31 +55,7 @@ dropArea.addEventListener("drop", (event)=>{
     uploadFile();
 });
 
-function showFile(){
-    let fileType = file.type;
-    let fileName = file.name;
-    let fileSize = file.size;
-    console.log(fileName);
-    let validExtensions = ["application/vnd.openxmlformats-officedocument.presentationml.presentation", "image/jpeg", "image/jpg"];
-    if(validExtensions.includes(fileType)){
-        let fileReader = new FileReader(); // creating new filereader object
-        fileReader.onload = ()=>{
-            // var c = document.getElementById("myCanvas");
-            // var ctx = c.getContext("2d");
-            // ctx.beginPath();
-            // ctx.rect(50, 20, 200, 150);
-            // ctx.fill();
-            // document.getElementById("upload").style.display = "none";
-            // document.getElementById("uploaded").style.display = "block";
-            // document.getElementById("boots").style.display = "block";
-        }
-        fileReader.readAsDataURL(file);
-    }
-    else{
-        alert("This is not an Image File!");
-        dropArea.classList.remove("active");
-    }
-}
+
 
 async function uploadFile() {
     let formData = new FormData();
@@ -89,6 +74,7 @@ async function uploadFile() {
         });
         document.getElementById("processing").style.display = "none";
         document.getElementById("complete").style.display = "block";
+        document.getElementById("another").style.display = "flex";
         fetch('/delete/', {method: "GET", body: null});
         // console.log('HTTP response code:',r.status);
      } catch(e) {

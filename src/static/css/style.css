@@ -3,20 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 :root{
-  --light-grey: #f5fbfc;
+/*  --light-grey: #f5fbfc;
   --light-green: #ebfae6;
   --mid-green: #7bd361;
   --bright-green: #58da6e;
   --aqua-grey: #a4afb3;
-  --coral-red: #f55f6b;
+  --coral-red: #f55f6b;*/
 
   --dark-grey: #242423;
   --cadet-blue: #29335c;
   --wine-red: #a64d79;
   --light-grey: #fafafa;
+  --box-grey: #b0b0b0;
   --mid-grey: #999999;
-  --dark-grey: #242423;
-  --box-grey: #b0b0b0
 }
 
 /*-- Body Reset --*/
@@ -38,6 +37,20 @@ body{
   display:none;
 }
 
+#processing{
+  display: none;
+}
+
+#another{
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#complete{
+  display: none;
+}
+
 .centered{
   position: relative;
   display: flex;
@@ -48,7 +61,7 @@ body{
 }
 
 .drag-area{
-  border: 1.5px dashed var(--mid-grey);
+  border: 2px dashed var(--box-grey);
   height: 300px;
   width: 400px;
   border-radius: 5px;
@@ -85,7 +98,7 @@ body{
 }
 
 .drag-area.active{
-  border: 1px solid var(--mid-grey);
+  border: 2px solid var(--box-grey);
 }
 
 .drag-area .icon{
@@ -103,7 +116,7 @@ body{
 .drag-area span{
   font-size: 17px;
   font-weight: 300;
-  color: var(--wine-red);
+  color: var(--mid-grey);
   margin: 5px 0 13px 0;
 }
 
