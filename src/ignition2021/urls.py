@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    path('api/', include('rest_framework.urls')),
     path('', views.index,name="index"),
+    path('home/', views.home, name="home"),
+    path('upload/', views.FileView.as_view()),
 ]
