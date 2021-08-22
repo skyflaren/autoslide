@@ -65,9 +65,10 @@ body{
 
 .button{
   background-color: white; 
-  color: black; 
-  border: 2px solid #4CAF50;
-  
+  color: var(--wine-red);
+  padding: 5px;
+  border: 2px solid var(--wine-red);
+  border-radius: 0.25rem
 }
 
 .button:hover{
@@ -75,7 +76,8 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #4CAF50;
+  background-color: var(--wine-red);
+  transition: background-color, color linear 0.15s;
   color: white;
 }
 
