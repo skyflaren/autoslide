@@ -17,6 +17,7 @@ function another(){
     for(let xx of document.getElementsByClassName("drag-area")){
         xx.style.removeProperty('border');
     }
+    // input.value = null;
 }
 
 button.onclick = ()=>{

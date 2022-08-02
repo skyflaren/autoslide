@@ -31,8 +31,11 @@ class FileView(APIView):
         path = default_storage.save('ppts/'+filename, ContentFile(prs.read()))
         print(path)
         
+        # print("ONEEEEEEEEEE")
         prs_w = PresentationCreator(filename, foldername)
+        # print("TWOOOOOOOOOO")
         prs_w.ReadPresentation()
+        # print("THREEEEEEEEE")
         prs_w.Process()
 
         # Zip Folder
