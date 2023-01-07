@@ -32,7 +32,12 @@ class ImageScraper:
             self.query = query
             self.get_data()
             if self.data['photos']['results']:
-                top_result = self.data['photos']['results'][0]
+                # Filter out unsplash plus images
+                for photo in self.data['photos']['results']:
+                    if photo['urls'][self.quality].startswith("https://images.unsplash.com/"):
+                        top_result = photo
+                        break
+
                 name = top_result['id']
                 url = top_result['urls'][self.quality]
                 # print(f"{self.query}: ", end="")
