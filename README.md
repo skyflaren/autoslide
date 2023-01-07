@@ -20,11 +20,6 @@ Make sure the directory is the project file then activate the virtual environmen
 >> pipenv shell
 ```
 
-Create pipfile.lock by using:
-```
->> pipenv lock
-```
-
 All the dependencies can be installed by running:
 ```
 >> pipenv sync
