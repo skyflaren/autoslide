@@ -40,8 +40,8 @@ class ImageScraper:
 
                 name = top_result['id']
                 url = top_result['urls'][self.quality]
-                print(f"{self.query}: ", end="")
-                print(url)
+                # print(f"{self.query}: ", end="")
+                # print(url)
                 ret.append([name, url])
             else:
                 print("No results found")
